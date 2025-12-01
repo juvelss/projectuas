@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Keren - Glory Juvelin Langi</title>
+    <!-- Ini adalah link untuk mengambil library Bootstrap dari CDN agar bisa pakai kelas styling-nya seperti bg-primary atau btn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ini adalah link untuk mengambil font Poppins dari Google Fonts, yang lebih keren dan modern untuk tampilan teks -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 p-4">
+
+    <div class="container calculator-container rounded-3 shadow-lg p-4" style="max-width: 400px;">
+        
+        <!-- Ini adalah bagian header kalkulator yang menampilkan nama dan NIM sesuai permintaan -->
+        <div class="text-center mb-3">
+            <h5 class="text-dark fw-bold">Glory Juvelin Langi</h5>
+            <p class="text-muted small">NIM: 1710624007</p>
+        </div>
+        
+        <!-- Ini adalah gambar status kalkulator yang berubah tergantung hasil perhitungan, seperti indikator sukses atau error -->
+        <div class="mb-3">
+            <img id="statusImage" 
+                 src="https://placehold.co/400x100/E0F2FE/6B7280?text=Kalkulator" 
+                 alt="Status Kalkulator"
+                 class="img-fluid rounded shadow-sm">
+        </div>
+
+        <!-- Ini adalah area layar kalkulator tempat angka dan hasil perhitungan ditampilkan -->
+        <div class="display-area rounded p-3 mb-3">
+            <input type="text" id="display" 
+                   class="form-control border-0 bg-transparent text-end fs-1 fw-bold text-dark" 
+                   readonly 
+                   placeholder="0">
+        </div>
+
+        <!-- Ini adalah grid tombol kalkulator, diatur dalam 4 kolom untuk tombol angka dan operator -->
+        <div class="row g-2">
+            <!-- Ini adalah baris pertama tombol: Clear, Delete, Persen, dan Bagi -->
+            <div class="col-3">
+                <button data-value="C" class="btn btn-danger btn-calc w-100 py-3 fs-4 fw-bold">C</button>
+            </div>
+            <div class="col-3">
+                <button data-value="DEL" class="btn btn-secondary btn-calc w-100 py-3 fs-4 fw-bold">DEL</button>
+            </div>
+            <div class="col-3">
+                <button data-value="%" class="btn btn-secondary btn-calc w-100 py-3 fs-4 fw-bold">%</button>
+            </div>
+            <div class="col-3">
+                <button data-value="/" class="btn btn-primary btn-calc w-100 py-3 fs-4 fw-bold">/</button>
+            </div>
+
+            <!-- Ini adalah baris kedua tombol: Angka 7,8,9 dan Kali -->
+            <div class="col-3">
+                <button data-value="7" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">7</button>
+            </div>
+            <div class="col-3">
+                <button data-value="8" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">8</button>
+            </div>
+            <div class="col-3">
+                <button data-value="9" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">9</button>
+            </div>
+            <div class="col-3">
+                <button data-value="*" class="btn btn-primary btn-calc w-100 py-3 fs-4 fw-bold">*</button>
+            </div>
+
+            <!-- Ini adalah baris ketiga tombol: Angka 4,5,6 dan Kurang -->
+            <div class="col-3">
+                <button data-value="4" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">4</button>
+            </div>
+            <div class="col-3">
+                <button data-value="5" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">5</button>
+            </div>
+            <div class="col-3">
+                <button data-value="6" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">6</button>
+            </div>
+            <div class="col-3">
+                <button data-value="-" class="btn btn-primary btn-calc w-100 py-3 fs-4 fw-bold">-</button>
+            </div>
+
+            <!-- Ini adalah baris keempat tombol: Angka 1,2,3 dan Tambah -->
+            <div class="col-3">
+                <button data-value="1" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">1</button>
+            </div>
+            <div class="col-3">
+                <button data-value="2" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">2</button>
+            </div>
+            <div class="col-3">
+                <button data-value="3" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">3</button>
+            </div>
+            <div class="col-3">
+                <button data-value="+" class="btn btn-primary btn-calc w-100 py-3 fs-4 fw-bold">+</button>
+            </div>
+
+            <!-- Ini adalah baris kelima tombol: Angka 0 (lebar 2 kolom), Titik, dan Sama Dengan -->
+            <div class="col-6">
+                <button data-value="0" class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">0</button>
+            </div>
+            <div class="col-3">
+                <button data-value="." class="btn btn-light btn-calc w-100 py-3 fs-4 fw-bold text-dark border">.</button>
+            </div>
+            <div class="col-3">
+                <button data-value="=" class="btn btn-success btn-calc w-100 py-3 fs-4 fw-bold">=</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Ini adalah script Bootstrap JS dari CDN untuk membuat komponen interaktif seperti tombol berfungsi -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link ke file JS eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
