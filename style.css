@@ -1,0 +1,23 @@
+/* Ini adalah aturan CSS untuk mengatur font utama halaman menjadi Poppins, agar terlihat keren */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #a1d0ef; /* Warna pastel baby blue untuk background halaman */
+}
+/* Ini adalah efek animasi saat tombol diklik, agar terasa lebih responsif seperti tombol nyata */
+.btn-calc {
+    transition: all 0.1s ease-in-out;
+}
+.btn-calc:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+/* Ini adalah styling khusus untuk kotak kalkulator dengan warna light purple */
+.calculator-container {
+    background-color: #b593da; /* Warna pastel light purple untuk kotak kalkulator */
+    border: 2px solid #a697e2; /* Border tipis dengan warna ungu muda */
+}
+/* Ini adalah styling untuk layar kalkulator agar terlihat lebih menonjol */
+.display-area {
+    background-color: #7bddd8; /* Background putih untuk layar */
+    border: 1px solid #c1cefa; /* Border biru muda */
+}
